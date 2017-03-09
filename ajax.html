@@ -1,0 +1,28 @@
+
+<html>
+<head>
+    <title>Ajax</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        var Submit = function(){
+
+        var path="http://127.0.0.1:12345";
+        $.ajax({
+            url: path,
+            data: $('#sentToServer').serialize(),
+            type:"POST",
+            dataType:'text',
+            success: function(msg){
+                alert(msg);
+            }
+        });
+        }
+    </script>
+</head>
+<body>
+    <form id="sentToServer">
+        <input type="text" name="data"/>
+        <input type="button"  value="Send" onClick="Submit()"/>
+    </form>
+</body>
+</html>
